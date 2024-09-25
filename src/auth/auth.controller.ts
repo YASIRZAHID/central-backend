@@ -22,4 +22,10 @@ export class AuthController {
     const token = authHeader.split(' ')[1];  // Extract the token from the 'Bearer <token>' format
     return this.authorizerService.verifyToken(token);
   }
+
+  @Get('protected')
+  @UseGuards(JwtAuthGuard) // Apply the JWT Auth Guard
+  protectedRoute() {
+    return { message: 'You have accessed a protected route!' };
+  }
 }
