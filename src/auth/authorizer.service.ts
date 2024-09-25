@@ -14,7 +14,7 @@ export class AuthorizerService {
   }
 
   async signUp(email: string, password: string, name: string) {
-    return await this.authorizer.signup({ email, password, confirm_password });
+    return await this.authorizer.signup({ email, password, confirm_password: password });
   }
 
   async signIn(email: string, password: string) {
@@ -22,6 +22,6 @@ export class AuthorizerService {
   }
 
   async verifyToken(token: string) {
-    return await this.authorizer.verifyToken(token);
+    return await this.authorizer.validateJWTToken(token);
   }
 }
