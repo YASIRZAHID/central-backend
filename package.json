@@ -1,4 +1,8 @@
 {
+  "scripts": {
+  "start": "nest start",
+  "start:dev": "nest start --watch"
+},
   "dependencies": {
     "@authorizerdev/authorizer-js": "^2.0.3",
     "@nestjs/passport": "^10.0.3",
